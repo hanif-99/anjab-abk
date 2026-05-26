@@ -1,0 +1,16 @@
+*.env
+*.env.local
+.DS_Store
+/node_modules
+/vendor
+/storage/logs/*
+/storage/framework/*
+/public/storage
+.idea
+.vscode
+*.swp
+*.swo
+*~
+.env.*.php
+composer.lock
+package-lock.json

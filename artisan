@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Artisan CLI - e-ANJAB & e-ABK
+ * Laravel Artisan Command Line Interface
+ */
+
+define('LARAVEL_START', microtime(true));
+
+// Create the application
+$app = require_once __DIR__.'/bootstrap/app.php';
+
+// Run the artisan command
+$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+
+$status = $kernel->handle(
+    $input = new Symfony\Component\Console\Input\ArgvInput,
+    new Symfony\Component\Console\Output\ConsoleOutput
+);
+
+// Shutdown the application
+$kernel->terminate($input, $status);
+
+exit($status);
+?>
